@@ -5,7 +5,7 @@ const PORT=3001;
 app.get("/",(req,res)=>{
     // const sid=req.query.id;
     // const name=req.query.name;
-    //distructure way
+    //distructureing way
     const {id,name}=req.query;
    res.send("Student id is:"+id+"-Name Is:"+name);   
 });
