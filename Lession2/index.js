@@ -9,7 +9,7 @@ app.get("/",(req,res)=>{
     const {id,name}=req.query;
    res.send("Student id is:"+id+"-Name Is:"+name);   
 });
-
+//not works
 
 
 app.listen(PORT,()=>{
