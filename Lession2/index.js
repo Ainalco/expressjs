@@ -38,6 +38,15 @@ app.post("/products",(req,res)=>{
    res.send("Welcome :"+name+" Your ID:"+id);   
 });
 
+app.get("/register",(req,res)=>{
+    res.sendFile(__dirname+"/register.html");  
+});
+app.post("/register",(req,res)=>{
+    const fullName=req.body.fullname;
+    const email=req.body.email;
+    res.send(`Your Name id:${fullName} and Email is: ${email}`);  
+});
+
 
 
 app.listen(PORT,()=>{
