@@ -15,7 +15,7 @@ const firstMiddleware=(req,res,next)=>{
 // });
 
 //for all method
-app.use(firstMiddleware)
+app.use(firstMiddleware);
 
 app.get("/",(req,res)=>{
     console.log("I am Home "+req.currentTime);
