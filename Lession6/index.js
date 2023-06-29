@@ -16,7 +16,12 @@ const firstMiddleware=(req,res,next)=>{
 
 //for all method
 app.use(firstMiddleware);
-
+app.use((req,res,next)=>{
+    res.send("404 Not Found!!!");
+});
+app.use((err,req,res,next)=>{
+    res.send(500);
+});
 app.get("/",(req,res)=>{
     console.log("I am Home "+req.currentTime);
     res.send(`<h3>Hello This Home</h3>`); 
