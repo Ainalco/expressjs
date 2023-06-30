@@ -29,7 +29,7 @@ app.get("/",(req,res)=>{
 
 app.get("/about",(req,res)=>{
     console.log("I am About "+req.currentTime);
-    res.send(`<h3>Hello This About</h3>`); 
+    res.send(`<h3>Hello This About Page</h3>`); 
 });
 
 app.listen(PORT,()=>{
