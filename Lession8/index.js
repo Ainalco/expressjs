@@ -1,28 +1,16 @@
 const express= require('express');
+const userRouter=require('./routes/users.route');
+const productRouter=require('./routes/products.route');
 const app= express();
 const PORT=3000;
 
 app.use(express.urlencoded({extended:true}));
-const users=[{
-    name:"Ainal Haque",
-    age:40
-}];
-const htmlform=`
-<form method="POST" action="/user">
-<input type="text" name="name" placeholder="Enter your Name"/>
-<input type="number" name="age" placeholder="Enter your Age"/>
-<button type="Submit">Save User</button>
-</form>
-`
-app.get("/user",(req,res)=>{
-    res.send(`<h3>Hello User</h3>`); 
-});
-app.post("/user",(req,res)=>{
-    res.send(`<h3>Hello User</h3>`); 
-});
-app.use((req,res)=>{
+app.use(userRouter);
+app.use(productRouter);
+
+app.use((req,res,next)=>{
     res.status(404).json({
-        message:"Resource Not Found"
+        message:"Resource Not Found",
     });
 });
 app.listen(PORT,()=>{
