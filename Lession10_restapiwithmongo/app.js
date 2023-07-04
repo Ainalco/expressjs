@@ -1,7 +1,11 @@
 const express= require('express');
 const cors=require('cors');
 const bodyParser=require('body-parser');
+require("./config/db");
+const usersRouter=require("./routes/user.route");
 const app= express();
+
+app.use("/api/users",usersRouter);
 
 app.use(cors());
 app.use(bodyParser.urlencoded({extended:true}));

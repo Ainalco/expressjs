@@ -1,6 +1,6 @@
 const app =require("./app");
-
-const PORT=5000;
+const config=require("./config/config");
+const PORT=config.app.port;
 
 
 app.listen(PORT,()=>{
