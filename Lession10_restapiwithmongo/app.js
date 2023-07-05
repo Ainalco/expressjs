@@ -1,15 +1,14 @@
-const express= require('express');
-const cors=require('cors');
-const bodyParser=require('body-parser');
+const express = require("express");
+const cors = require("cors");
 require("./config/db");
-const usersRouter=require("./routes/user.route");
+const userRouter=require("./routes/user.route");
 const app= express();
 
-app.use("/api/users",usersRouter);
-
 app.use(cors());
-app.use(bodyParser.urlencoded({extended:true}));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.use("/api/users", userRouter);
 
 
 //Home page
